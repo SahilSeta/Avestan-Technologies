@@ -1,0 +1,13 @@
+.header-main {
+  background: #174656;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+}
+mat-toolbar.mat-toolbar.mat-toolbar-single-row {
+  padding: 0;
+  height: auto !important;
+}

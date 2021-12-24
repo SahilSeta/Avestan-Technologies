@@ -1,0 +1,52 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+mat-toolbar {
+  background: #004a9f;
+  color: white;
+}
+
+mat-sidenav {
+  margin: 16px;
+  width: 200px;
+  border-right: none;
+  background: #002b5c;
+  color: white;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+}
+
+.content {
+  min-height: calc(100vh - 98px);
+  height : auto;
+  overflow: scroll;
+  border-radius: 10px;
+  margin: 16px;
+  margin-left: 32px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: lightgray;
+}
+
+mat-sidenav-container {
+  height: calc(100vh - 65px);
+}
+.menu-button.mat-button.mat-button-base.active {
+  width: 100%;
+  color: #fff;
+  background: #174656;
+}
+.menu-button.mat-button.mat-button-base {
+  width: 100%;
+margin-bottom: 10px;
+}
+
+
+.mat-body, .mat-body-1, .mat-typography{
+  font : inherit !important;
+  font-size: 20px;
+}

@@ -1,0 +1,15 @@
+<app-header></app-header>
+<mat-sidenav-container>
+  <mat-sidenav class="mat-elevation-z8" opened mode="side"><app-sidebar></app-sidebar></mat-sidenav>
+
+  <mat-sidenav-content>
+      <div class="content mat-elevation-z8">
+        <div class="total-count text-center">
+          <h2>Total user count</h2>
+          <div class="d-flex justify-content-center text-center">
+            <button type="button" mat-raised-button class="button-rounded" color="primary">{{ totalProfiles }} users</button>
+          </div>
+        </div>
+      </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

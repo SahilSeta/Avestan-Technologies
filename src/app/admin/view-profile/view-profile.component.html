@@ -1,0 +1,29 @@
+<app-header></app-header>
+<mat-sidenav-container>
+  <mat-sidenav class="mat-elevation-z8" opened mode="side"><app-sidebar></app-sidebar></mat-sidenav>
+
+  <mat-sidenav-content>
+      <div class="content mat-elevation-z8 main-content">
+        <div class="col-lg-6">
+          <div class="row main-content-single-profile py-5 px-3">
+            <div class="col-lg-5 col-md-5 col-xs-12 p-2 d-flex justify-content-center">
+              <img src="assets/images/avatar.png" alt="avatar" class="avatar-img" />
+            </div>
+            <div class="col-lg-7 col-md-7 col-xs-12 p-1">
+              <div class="row">
+                <div class="col-5 text-right pr-1"><h4>Username : </h4></div>
+                <div class="col-7"><h4> {{ userdata.username }}</h4></div>
+                <br>
+                <div class="col-5 text-right pr-1"><h4>Email : </h4></div>
+                <div class="col-7"><h4> {{ userdata.email }}</h4></div>
+                <br>
+                <div class="col-5 text-right h4r-1"><h4>Password : </h4></div>
+                <div class="col-7"><h4> **********</h4></div>
+              </div>
+            </div>
+            <div class="col-12 text-center"><button class="btn rounded btn-primary btn-lg mt-2 " [routerLink]="['/admin','profiles','edit',userdata.id]">EDIT</button></div>
+          </div>
+        </div>
+      </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

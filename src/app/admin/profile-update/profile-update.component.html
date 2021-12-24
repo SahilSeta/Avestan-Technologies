@@ -1,0 +1,44 @@
+<app-header></app-header>
+<mat-sidenav-container>
+  <mat-sidenav class="mat-elevation-z8" opened mode="side"><app-sidebar></app-sidebar></mat-sidenav>
+
+  <mat-sidenav-content>
+      <div class="content mat-elevation-z8 main-content">
+        <mat-card class=" bg-white shadow px-3 py-5 d-flex justify-content-center">
+          <form [formGroup]="signupForm" (ngSubmit)="submitLoginForm(signupForm)" novalidate>
+            <h2>Signup</h2>
+            <mat-form-field appearance="outline">
+              <mat-label>Username</mat-label>
+              <input matInput placeholder="Enter Username" formControlName="username" [ngClass]="{'has-error': formErrors.username}">
+              <mat-error *ngIf="formErrors.username" [innerHTML]="formErrors.username"></mat-error>
+              <mat-icon matPrefix>face</mat-icon>
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="Enter Email" formControlName="email" [ngClass]="{'has-error': formErrors.email}">
+              <mat-error *ngIf="formErrors.email" [innerHTML]="formErrors.email"></mat-error>
+              <mat-icon matPrefix>email</mat-icon>
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput placeholder="Enter Password" formControlName="password" [ngClass]="{'has-error': formErrors.password}">
+              <mat-error *ngIf="formErrors.password" [innerHTML]="formErrors.password"></mat-error>
+              <mat-icon matPrefix>lock</mat-icon>
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="outline">
+              <mat-label>Profile Photo</mat-label>
+              <input matInput placeholder="Enter Password" formControlName="photo" [ngClass]="{'has-error': formErrors.photo}">
+              <mat-error *ngIf="formErrors.photo" [innerHTML]="formErrors.photo"></mat-error>
+              <mat-icon matPrefix>image</mat-icon>
+            </mat-form-field>
+            <div class="d-flex justify-content-center pt-3 mt-3 text-center">
+              <button type="submit" mat-raised-button class="button-rounded" color="primary">Register</button>
+            </div>
+          </form>
+        </mat-card>
+      </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

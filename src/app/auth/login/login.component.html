@@ -1,0 +1,26 @@
+<div class="main-content">
+  <div class="col-5 ">
+    <mat-card class=" bg-white shadow px-3 py-5 d-flex justify-content-center">
+      <form [formGroup]="loginForm" (ngSubmit)="submitLoginForm(loginForm)" novalidate>
+        <h2>Login</h2>
+        <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input matInput placeholder="Enter Username" formControlName="username" [ngClass]="{'has-error': formErrors.username}">
+          <mat-error *ngIf="formErrors.username" [innerHTML]="formErrors.username"></mat-error>
+          <mat-icon matPrefix>face</mat-icon>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="Enter Password" formControlName="password" [ngClass]="{'has-error': formErrors.password}">
+          <mat-error *ngIf="formErrors.password" [innerHTML]="formErrors.password"></mat-error>
+          <mat-icon matPrefix>lock</mat-icon>
+        </mat-form-field>
+        <div class="d-flex justify-content-center pt-3 mt-3 text-center">
+          <button type="submit" mat-raised-button class="button-rounded " color="primary">Login</button>
+        </div>
+        <p class="mt-3">Don't have an account ? <a routerLink="/auth/register">Create new here.</a></p>
+      </form>
+    </mat-card>
+  </div>
+</div>

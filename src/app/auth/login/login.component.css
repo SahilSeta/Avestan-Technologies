@@ -1,0 +1,19 @@
+.main-content {
+  background-color: #1ddc8c !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height : auto;
+  min-height: 100vh;
+}
+.button-rounded
+{
+  border-radius: 20px;
+    width: 60%;
+}
+.d-flex{
+  display: flex;
+}
+.justify-content-center{
+  justify-content: center;
+}

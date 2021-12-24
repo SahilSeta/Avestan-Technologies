@@ -1,0 +1,33 @@
+<app-header></app-header>
+<mat-sidenav-container>
+  <mat-sidenav class="mat-elevation-z8" opened mode="side"><app-sidebar></app-sidebar></mat-sidenav>
+
+  <mat-sidenav-content>
+      <div class="content mat-elevation-z8 main-content">
+        <div class="row bg-white shadow rounded w-100 mx-5">
+          <div class="col-12">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Username</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Password</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of data; index as i;">
+                  <th scope="row">{{ item.username }}</th>
+                  <td>{{ item.email }}</td>
+                  <td>****</td>
+                  <td><a [routerLink]="['/admin','profiles','edit',item._id]">Edit</a> | <a href="javascript:void(0)" (click)="deleteProduct(item._id)">Delete</a></td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

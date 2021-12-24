@@ -1,0 +1,18 @@
+.avatar-img {
+  max-width: 100px;
+}
+.row.main-content-single-profile {
+  display: flex;
+  background: #174656;
+  padding: 20px 50px;
+  color: #fff;
+  border-radius: 15px;
+  align-items: center;
+  justify-content: center;
+
+}
+.row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
