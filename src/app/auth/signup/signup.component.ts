@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { CommonFunction } from 'src/app/common';
 import { AuthService } from 'src/app/services/auth.service';
 import { JwtService } from 'src/app/services/jwt.service';
@@ -18,7 +19,7 @@ export class SignupComponent implements OnInit {
     email : '',
     password: ''
   };
-  constructor(private fb : FormBuilder, private jwtService : JwtService, private router : Router, private authService : AuthService) {
+  constructor(private fb : FormBuilder, private jwtService : JwtService, private router : Router, private authService : AuthService, private toastr: ToastrService) {
     this.signupForm = this.fb.group({
       username: [
         null,
@@ -59,15 +60,31 @@ export class SignupComponent implements OnInit {
   }
 
   submitLoginForm( formdata : any ) {
-    console.log(formdata)
+    //console.log(formdata)
     this._generateErrors();
     if(formdata.valid){
       let maindata = formdata.value;
       this.authService.signUpProcess(maindata).subscribe(
         (res) => {
           console.log(res)
-          this.jwtService.saveToken(res.token);
-          this.router.navigateByUrl('/admin/dashboard');
+          if(res.success){
+            this.jwtService.saveToken(res.token);
+            let userprofile = {
+              username : res.data.username,
+              email : res.data.email,
+              id : res.data._id,
+              isDeleted : res.data.isDeleted,
+              password : res.data.password
+            }
+            console.log(userprofile)
+            this.jwtService.saveUser(userprofile)
+           this.router.navigateByUrl('/admin/dashboard');
+          }else if(!res.success){
+            this.toastr.error(res.error);
+          }
+
+        },(err) => {
+          //console.log(err)
         }
       );
     }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { JwtService } from 'src/app/services/jwt.service';
 
+declare var $ : any;
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -17,5 +18,8 @@ export class HeaderComponent implements OnInit {
     this.jwtService.destroyToken();
     this.jwtService.destroyUser();
     this.router.navigateByUrl('/auth/login')
+  }
+  toggleDrawer(){
+    $('.collapse').collapse("toggle")
   }
 }

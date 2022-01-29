@@ -16,7 +16,7 @@ export class ViewProfileComponent implements OnInit {
   }
   getProfileData () {
     this.userdata = this.jwtService.getUser();
-    console.log(this.userdata)
+    console.log(this.jwtService.getUser())
   }
 
 }

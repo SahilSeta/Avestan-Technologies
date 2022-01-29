@@ -17,7 +17,7 @@ export class DashboardComponent implements OnInit {
   getProfileData(){
     this.profileService.getProfiles().subscribe(
       (res) => {
-        console.log(res.data);
+        //console.log(res.data);
         let data = res.data;
         this.totalProfiles = data.length;
       }
